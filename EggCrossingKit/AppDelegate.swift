@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // AppsFlyer Init
-           AppsFlyerLib.shared().appsFlyerDevKey = "Kt23nTYCU32ViAkW8iuphW"
-           AppsFlyerLib.shared().appleAppID = "6752485183"
+           AppsFlyerLib.shared().appsFlyerDevKey = "suQJTxXVai2ULmaTSDrt2W"
+           AppsFlyerLib.shared().appleAppID = "6749801154"
            //AppsFlyerLib.shared().delegate = self
            AppsFlyerLib.shared().isDebug = true
            
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //MARK: - One signal
-        OneSignal.initialize("c428aee7-84bb-412d-82cb-2e5d879b8ce7", withLaunchOptions: nil)
+        OneSignal.initialize("d6684e8b-3b31-4e91-8873-68f0186184ab", withLaunchOptions: nil)
         OneSignal.login(appsFlyerId)
         return true
     }
