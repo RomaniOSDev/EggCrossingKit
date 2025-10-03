@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		74A985912E7C612700FE317A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A985872E7C612700FE317A /* AppDelegate.swift */; };
 		74A985922E7C612700FE317A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9858E2E7C612700FE317A /* SceneDelegate.swift */; };
-		74A985932E7C612700FE317A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A9858F2E7C612700FE317A /* ViewController.swift */; };
 		74A985942E7C612700FE317A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A985882E7C612700FE317A /* Assets.xcassets */; };
 		74A985962E7C612700FE317A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A9858B2E7C612700FE317A /* LaunchScreen.storyboard */; };
 		74A985972E7C612700FE317A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A9858D2E7C612700FE317A /* Main.storyboard */; };
@@ -58,7 +57,6 @@
 		74A9858A2E7C612700FE317A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A9858C2E7C612700FE317A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74A9858E2E7C612700FE317A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74A9858F2E7C612700FE317A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74A9865E2E7D4DB200FE317A /* EggCrossingKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggCrossingKit.entitlements; sourceTree = "<group>"; };
 		74A986B72E7D60A000FE317A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		74A986B82E7D60A000FE317A /* PuzzleHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleHeaderCell.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				74A9858B2E7C612700FE317A /* LaunchScreen.storyboard */,
 				74A9858D2E7C612700FE317A /* Main.storyboard */,
 				74A9858E2E7C612700FE317A /* SceneDelegate.swift */,
-				74A9858F2E7C612700FE317A /* ViewController.swift */,
 			);
 			path = EggCrossingKit;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 			files = (
 				74A985912E7C612700FE317A /* AppDelegate.swift in Sources */,
 				74A985922E7C612700FE317A /* SceneDelegate.swift in Sources */,
-				74A985932E7C612700FE317A /* ViewController.swift in Sources */,
 				74A986E82E7D60A000FE317A /* CollectionCell.swift in Sources */,
 				74A986E92E7D60A000FE317A /* PuzzleHeaderCell.swift in Sources */,
 				74A986EA2E7D60A000FE317A /* LoaderController.swift in Sources */,
@@ -534,7 +530,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agg.crossing.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -572,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agg.crossing.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

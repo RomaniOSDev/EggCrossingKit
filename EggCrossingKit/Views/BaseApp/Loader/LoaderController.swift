@@ -8,6 +8,10 @@ class LoaderController: UIViewController {
     let viewModel = BaseViewModel.shared
     private var isFirst = false
     private let loader = UIActivityIndicatorView()
+    private var didTransition = false
+    private var startupTask: Task<Void, Never>?
+
+    private enum Outcome { case network, timeout }
 
     private let backgroundImageView: UIImageView = {
         let view = UIImageView()
@@ -43,34 +47,15 @@ class LoaderController: UIViewController {
             UserDefaults.standard.setValue(0, forKey:  UserDefaultsKeys.quizResult.key)
             UserDefaults.standard.setValue(true, forKey:  UserDefaultsKeys.firstInit.key)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            UIView.animate(withDuration: 1.0) {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.loader.startAnimating()
-                }
-                self.logoImage.snp.remakeConstraints { make in
-                    make.center.equalToSuperview()
-                    make.width.equalToSuperview()
-                    make.height.equalTo(230)
-                }
-                self.logoNameImage.snp.remakeConstraints { make in
-                    make.top.equalTo(self.logoImage.snp.bottom)
-                    make.width.equalTo(250)
-                    make.height.equalTo(70)
-                    make.centerX.equalToSuperview()
-                }
-                self.view.layoutIfNeeded()
-            }
-            
-            // Переход к следующему экрану после анимации
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.loader.stopAnimating()
-                self.transitionToNextScreen()
-            }
-        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startStartupFlow()
     }
     deinit {
         loader.stopAnimating()
+        startupTask?.cancel()
     }
     private func setupeSubview() {
         view.addSubview(backgroundImageView)
@@ -107,5 +92,65 @@ class LoaderController: UIViewController {
         // Переходим к WelcomeController
         let welcomeController = WelcomeController()
         navigationController?.viewControllers = [welcomeController]
+    }
+
+    private func startStartupFlow() {
+        guard startupTask == nil else { return }
+        loader.startAnimating()
+        UIView.animate(withDuration: 1.0) {
+            self.logoImage.snp.remakeConstraints { make in
+                make.center.equalToSuperview()
+                make.width.equalToSuperview()
+                make.height.equalTo(230)
+            }
+            self.logoNameImage.snp.remakeConstraints { make in
+                make.top.equalTo(self.logoImage.snp.bottom)
+                make.width.equalTo(250)
+                make.height.equalTo(70)
+                make.centerX.equalToSuperview()
+            }
+            self.view.layoutIfNeeded()
+        }
+
+        startupTask = Task { [weak self] in
+            guard let self else { return }
+            let outcome = await self.firstOutcome(timeoutSeconds: 3)
+            await self.animateAndTransition(outcome: outcome)
+        }
+    }
+
+    private func firstOutcome(timeoutSeconds: UInt64) async -> Outcome {
+        await withTaskGroup(of: Outcome?.self) { group in
+            group.addTask { [weak self] in
+                guard let self else { return nil }
+                do {
+                    _ = try await NetworkService.shared.getAppData(DataInitialization_EG.url.value)
+                    return .network
+                } catch {
+                    return .network // даже при ошибке не держим пользователя
+                }
+            }
+            group.addTask {
+                try? await Task.sleep(nanoseconds: timeoutSeconds * 1_000_000_000)
+                return .timeout
+            }
+            defer { group.cancelAll() }
+            for await result in group {
+                if let result { return result }
+            }
+            return .timeout
+        }
+    }
+
+    @MainActor private func animateAndTransition(outcome: Outcome) async {
+        guard didTransition == false else { return }
+        didTransition = true
+        UIView.animate(withDuration: 0.4, animations: {
+            self.logoImage.alpha = 0.0
+            self.logoNameImage.alpha = 0.0
+        }, completion: { _ in
+            self.loader.stopAnimating()
+            self.transitionToNextScreen()
+        })
     }
 }

@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  EggCrossingKit
 //
-//  Created by Роман Главацкий on 18.09.2025.
+//  Created by Vasilii Apro on 18.09.2025.
 //
 
 import UIKit
