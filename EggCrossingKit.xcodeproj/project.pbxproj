@@ -13,10 +13,6 @@
 		74A985962E7C612700FE317A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A9858B2E7C612700FE317A /* LaunchScreen.storyboard */; };
 		74A985972E7C612700FE317A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A9858D2E7C612700FE317A /* Main.storyboard */; };
 		74A985E72E7C648300FE317A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74A985E62E7C648300FE317A /* SnapKit */; };
-		74A986612E7D4DDB00FE317A /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986602E7D4DDB00FE317A /* OneSignalExtension */; };
-		74A986632E7D4DDB00FE317A /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986622E7D4DDB00FE317A /* OneSignalFramework */; };
-		74A986652E7D4DDB00FE317A /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986642E7D4DDB00FE317A /* OneSignalInAppMessages */; };
-		74A986672E7D4DDB00FE317A /* OneSignalLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986662E7D4DDB00FE317A /* OneSignalLocation */; };
 		74A9866A2E7D4DFD00FE317A /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986692E7D4DFD00FE317A /* AppsFlyerLib */; };
 		74A986E82E7D60A000FE317A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986B72E7D60A000FE317A /* CollectionCell.swift */; };
 		74A986E92E7D60A000FE317A /* PuzzleHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986B82E7D60A000FE317A /* PuzzleHeaderCell.swift */; };
@@ -96,10 +92,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A985E72E7C648300FE317A /* SnapKit in Frameworks */,
-				74A986672E7D4DDB00FE317A /* OneSignalLocation in Frameworks */,
-				74A986632E7D4DDB00FE317A /* OneSignalFramework in Frameworks */,
-				74A986652E7D4DDB00FE317A /* OneSignalInAppMessages in Frameworks */,
-				74A986612E7D4DDB00FE317A /* OneSignalExtension in Frameworks */,
 				74A9866A2E7D4DFD00FE317A /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +391,6 @@
 			mainGroup = 74A985662E7C610400FE317A;
 			packageReferences = (
 				74A985E52E7C648300FE317A /* XCRemoteSwiftPackageReference "SnapKit" */,
-				74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */,
 				74A986682E7D4DFD00FE317A /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = 74A985702E7C610400FE317A /* Products */;
@@ -517,7 +508,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EggCrossingKit/EggCrossingKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EggCrossingKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -555,7 +546,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EggCrossingKit/EggCrossingKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EggCrossingKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -736,14 +727,6 @@
 				minimumVersion = 5.7.1;
 			};
 		};
-		74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-iOS-SDK";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.14;
-			};
-		};
 		74A986682E7D4DFD00FE317A /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
@@ -759,26 +742,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74A985E52E7C648300FE317A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		74A986602E7D4DDB00FE317A /* OneSignalExtension */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalExtension;
-		};
-		74A986622E7D4DDB00FE317A /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalFramework;
-		};
-		74A986642E7D4DDB00FE317A /* OneSignalInAppMessages */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalInAppMessages;
-		};
-		74A986662E7D4DDB00FE317A /* OneSignalLocation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 74A9865F2E7D4DDB00FE317A /* XCRemoteSwiftPackageReference "OneSignal-iOS-SDK" */;
-			productName = OneSignalLocation;
 		};
 		74A986692E7D4DFD00FE317A /* AppsFlyerLib */ = {
 			isa = XCSwiftPackageProductDependency;
