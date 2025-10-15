@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // AppsFlyer Init
            AppsFlyerLib.shared().appsFlyerDevKey = "suQJTxXVai2ULmaTSDrt2W"
            AppsFlyerLib.shared().appleAppID = "6749801154"
-           //AppsFlyerLib.shared().delegate = self
+           AppsFlyerLib.shared().delegate = self
            AppsFlyerLib.shared().isDebug = true
            
         AppsFlyerLib.shared().start()

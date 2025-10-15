@@ -16,7 +16,7 @@
 		74A9866A2E7D4DFD00FE317A /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 74A986692E7D4DFD00FE317A /* AppsFlyerLib */; };
 		74A986E82E7D60A000FE317A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986B72E7D60A000FE317A /* CollectionCell.swift */; };
 		74A986E92E7D60A000FE317A /* PuzzleHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986B82E7D60A000FE317A /* PuzzleHeaderCell.swift */; };
-		74A986EA2E7D60A000FE317A /* LoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986BA2E7D60A000FE317A /* LoaderController.swift */; };
+		74A986EA2E7D60A000FE317A /* LoadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986BA2E7D60A000FE317A /* LoadController.swift */; };
 		74A986EB2E7D60A000FE317A /* SelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986BC2E7D60A000FE317A /* SelectController.swift */; };
 		74A986EC2E7D60A000FE317A /* SelectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986BD2E7D60A000FE317A /* SelectData.swift */; };
 		74A986ED2E7D60A000FE317A /* FairyTalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986BF2E7D60A000FE317A /* FairyTalesViewController.swift */; };
@@ -42,6 +42,9 @@
 		74A987012E7D60A000FE317A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986E12E7D60A000FE317A /* Model.swift */; };
 		74A987022E7D60A000FE317A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986E22E7D60A000FE317A /* NetworkService.swift */; };
 		74A987032E7D60A000FE317A /* SaveValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A986E42E7D60A000FE317A /* SaveValue.swift */; };
+		74B566582EA023C9008F3E50 /* InternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B566552EA023C9008F3E50 /* InternetViewController.swift */; };
+		74B566592EA023C9008F3E50 /* CheckLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B566542EA023C9008F3E50 /* CheckLink.swift */; };
+		74B5665A2EA023C9008F3E50 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B566562EA023C9008F3E50 /* LoaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +59,7 @@
 		74A9865E2E7D4DB200FE317A /* EggCrossingKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggCrossingKit.entitlements; sourceTree = "<group>"; };
 		74A986B72E7D60A000FE317A /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		74A986B82E7D60A000FE317A /* PuzzleHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleHeaderCell.swift; sourceTree = "<group>"; };
-		74A986BA2E7D60A000FE317A /* LoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderController.swift; sourceTree = "<group>"; };
+		74A986BA2E7D60A000FE317A /* LoadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadController.swift; sourceTree = "<group>"; };
 		74A986BC2E7D60A000FE317A /* SelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectController.swift; sourceTree = "<group>"; };
 		74A986BD2E7D60A000FE317A /* SelectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectData.swift; sourceTree = "<group>"; };
 		74A986BF2E7D60A000FE317A /* FairyTalesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTalesViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +85,9 @@
 		74A986E12E7D60A000FE317A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		74A986E22E7D60A000FE317A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		74A986E42E7D60A000FE317A /* SaveValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveValue.swift; sourceTree = "<group>"; };
+		74B566542EA023C9008F3E50 /* CheckLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLink.swift; sourceTree = "<group>"; };
+		74B566552EA023C9008F3E50 /* InternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetViewController.swift; sourceTree = "<group>"; };
+		74B566562EA023C9008F3E50 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		8979CC5C404A0D127545A666 /* Pods-EggCrossingKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggCrossingKit.debug.xcconfig"; path = "Target Support Files/Pods-EggCrossingKit/Pods-EggCrossingKit.debug.xcconfig"; sourceTree = "<group>"; };
 		DEB2844B732CB0F3BF16C39B /* Pods-EggCrossingKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggCrossingKit.release.xcconfig"; path = "Target Support Files/Pods-EggCrossingKit/Pods-EggCrossingKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,7 +159,7 @@
 		74A986BB2E7D60A000FE317A /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				74A986BA2E7D60A000FE317A /* LoaderController.swift */,
+				74A986BA2E7D60A000FE317A /* LoadController.swift */,
 			);
 			path = Loader;
 			sourceTree = "<group>";
@@ -332,8 +338,19 @@
 				74A986DD2E7D60A000FE317A /* BaseApp */,
 				74A986E02E7D60A000FE317A /* GameApp */,
 				74A986E62E7D60A000FE317A /* Helps */,
+				74B566572EA023C9008F3E50 /* LoadingView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		74B566572EA023C9008F3E50 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				74B566542EA023C9008F3E50 /* CheckLink.swift */,
+				74B566552EA023C9008F3E50 /* InternetViewController.swift */,
+				74B566562EA023C9008F3E50 /* LoaderViewController.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		C2CEF48FFD2C6BF9B921E404 /* Frameworks */ = {
@@ -449,7 +466,7 @@
 				74A985922E7C612700FE317A /* SceneDelegate.swift in Sources */,
 				74A986E82E7D60A000FE317A /* CollectionCell.swift in Sources */,
 				74A986E92E7D60A000FE317A /* PuzzleHeaderCell.swift in Sources */,
-				74A986EA2E7D60A000FE317A /* LoaderController.swift in Sources */,
+				74A986EA2E7D60A000FE317A /* LoadController.swift in Sources */,
 				74A986EB2E7D60A000FE317A /* SelectController.swift in Sources */,
 				74A986EC2E7D60A000FE317A /* SelectData.swift in Sources */,
 				74A986ED2E7D60A000FE317A /* FairyTalesViewController.swift in Sources */,
@@ -475,6 +492,9 @@
 				74A987012E7D60A000FE317A /* Model.swift in Sources */,
 				74A987022E7D60A000FE317A /* NetworkService.swift in Sources */,
 				74A987032E7D60A000FE317A /* SaveValue.swift in Sources */,
+				74B566582EA023C9008F3E50 /* InternetViewController.swift in Sources */,
+				74B566592EA023C9008F3E50 /* CheckLink.swift in Sources */,
+				74B5665A2EA023C9008F3E50 /* LoaderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +528,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EggCrossingKit/EggCrossingKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EggCrossingKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -521,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agg.crossing.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -546,7 +566,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EggCrossingKit/EggCrossingKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EggCrossingKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -559,7 +579,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.agg.crossing.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AppsFlyerLib
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -15,11 +16,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else {return}
         window = UIWindow(windowScene: windowScene)
-        let controller = LoaderController()
-        let navigationController = UINavigationController(rootViewController: controller)
-        gameInitializad.navigation = navigationController
-        window?.rootViewController = navigationController
+        
+        let controller: UIViewController
+        if let lastUrl = SaveService.lastUrl {
+            if lastUrl == URL(string: "") {
+                controller = LoadingSplash()
+            }else{
+                print("last url: \(lastUrl)")
+                controller = WebviewVC(url: lastUrl)
+            }
+        } else {
+            controller = LoadingSplash()
+        }
+        
+        window?.rootViewController = controller
         window?.makeKeyAndVisible()
+
+        // 2. Обработка deep-ссылок из connectionOptions
+        for context in connectionOptions.urlContexts {
+            AppsFlyerLib.shared().handleOpen(context.url, options: nil)
+        }
             }
 
     func sceneDidDisconnect(_ scene: UIScene) {

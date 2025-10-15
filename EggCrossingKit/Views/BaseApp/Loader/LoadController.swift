@@ -3,7 +3,7 @@ import UIKit
 import SnapKit
 import CoreData
 
-class LoaderController: UIViewController {
+class LoadController: UIViewController {
     
     let viewModel = BaseViewModel.shared
     private var isFirst = false
@@ -152,5 +152,81 @@ class LoaderController: UIViewController {
             self.loader.stopAnimating()
             self.transitionToNextScreen()
         })
+    }
+}
+
+
+class SimpleLoaderController: UIViewController {
+    
+    private let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.color = UIColor(named: "brownColorCustom")
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        return indicator
+    }()
+    
+    private let backgroundImageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.image = UIImage(named: "backgroundImage")
+        view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    // Добавляем таймер для автоматического закрытия
+    private var autoDismissTimer: Timer?
+    private let autoDismissTime: TimeInterval = 3.0 // 3 секунды
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator.startAnimating()
+        
+        // Запускаем таймер для автоматического закрытия
+        startAutoDismissTimer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        activityIndicator.stopAnimating()
+        autoDismissTimer?.invalidate()
+        autoDismissTimer = nil
+    }
+    
+    deinit {
+        autoDismissTimer?.invalidate()
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = UIColor(named: "backgroundCustom")
+        
+        view.addSubview(backgroundImageView)
+        view.addSubview(activityIndicator)
+        
+        backgroundImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    private func startAutoDismissTimer() {
+        autoDismissTimer = Timer.scheduledTimer(withTimeInterval: autoDismissTime, repeats: false) { [weak self] _ in
+            self?.dismissLoader()
+        }
+    }
+    
+    private func dismissLoader() {
+        dismiss(animated: true) {
+            print("SimpleLoaderController dismissed automatically")
+        }
     }
 }
